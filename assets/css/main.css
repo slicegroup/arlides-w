@@ -828,9 +828,54 @@ footer p {
 
 /* VIEW FORM APLICATION */
 
+.form-aplication {
+  background-color: #f5f5f5;
+}
 .form-aplication .title-section{
   margin-bottom: 2rem;
   color: #007828;
+}
+
+.form-aplication label{
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;;
+  font-size: 1.5rem;
+} 
+
+.form-aplication textarea {
+  resize: none;
+}
+
+.form-aplication input, .form-aplication textarea {
+  border: 1px solid #afafaf; 
+}
+
+.form-aplication form {
+  display: flex;
+  /* flex-direction: column; */
+  flex-wrap: wrap;
+  width: 65rem;
+  align-items: flex-end;
+  justify-content: space-between;
+  box-shadow:  1px 1px 13px 0px #0000006b;
+  padding: 3rem;
+  background-color: #fff;
+}
+
+.form-flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-aplication label {
+  width: 50%;
+}
+
+label:nth-child(5) {
+  width: 100%;
+  height: 10rem;
 }
 
 /* RESPONSIVE */

@@ -51,49 +51,55 @@
       </nav>
     </header>
     <section class="form-aplication">
-      <div class="padding-right-left padding-top-bottom">
+      <div class="padding-right-left padding-top-bottom form-flex">
         <h2 class="title-section">FORMULARIO DE APLICACIÓN</h2>
         <p class="subtitle-sector">Para obtener ayuda sobre los planes de negocios, puede llenar el siguiente
           Formulario</p>
         <form action="">
-          <label for="">
+          <label for="name">
             Nombre y Apellido
-            <input type="text">
+            <input type="text" id="name">
           </label>
-          <label for="">
+          <label for="mail">
             Correo Electrónico
-            <input type="email">
+            <input type="email" id="mail">
           </label>
-          <label for="">
+          <label for="phone">
             Teléfono
-            <input type="number">
+            <input type="number" id="phone">
           </label>
-          <label for="">
+          <label for="city">
             Ciudad
-            <input type="text">
+            <input type="text" id="city">
           </label>
-          <label for="">
+          <label for="biography">
             Biografia
-            <textarea name="" id="" cols="30" rows="10"></textarea>
+            <textarea id="biography" id="" cols="30" rows="10"></textarea>
           </label>
-          <label for="">
+          <label for="name-company">
             Nombre de la empresa
-            <input type="text">
+            <input type="text" id="name-company">
           </label>
-          <label for="">
+          <label for="problem-company">
             ¿Qué problema resuelve la empresa?
-            <input type="text">
+            <input type="text" id="problem-company">
           </label>
-          <label for="">
+          <label for="service-company">
             ¿Cuál es su producto o servicio?
-            <input type="text">
+            <input type="text" id="service-company">
           </label>
           <label for="">
             ¿Cual es su control de ingresos y relaciones comerciales?
             <input type="text">
           </label>
-
-        </form>
+          <div class="box-submit"></div>
+          <div class="g-recaptcha" data-sitekey="your key"></div>
+          <button class='btn-green one'>
+            <div class='insider'></div>
+            ENVIAR
+          </button>
+      </div>
+      </form>
       </div>
     </section>
     <footer>
