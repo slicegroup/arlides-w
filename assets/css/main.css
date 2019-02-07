@@ -2,6 +2,11 @@ html {
   font-size: 10px!important;
 }
 
+
+*:focus {
+  outline: none!important;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -131,11 +136,13 @@ nav .nav-link-fixed {
 }
 
 .navbar-light .navbar-toggler {
-  border: solid 2px #007828;
+  border: transparent;
+  font-size: 2.5rem;
 }
 
 .navbar-brand {
   height: 5rem;
+  margin-bottom: .5rem;
 }
 .opacity-logo {
   opacity: 0;
@@ -145,7 +152,8 @@ nav .nav-link-fixed {
 }
 
 #button-white {
-  border: solid 2px #303030;
+  border: transparent;
+  font-size: 2.5rem;
   display: none;
 }
 
@@ -530,7 +538,6 @@ nav .nav-link-fixed {
 .content-logo:hover .mask-logo {
   opacity: 1;
   transition: .5s;
-
 }
 
 .content-logo:hover img {
@@ -664,6 +671,7 @@ footer p {
   right: 2rem;
   padding: 1rem 1.3rem;
   border-radius: 50%;
+  z-index: 99;
 }
 
 
@@ -829,38 +837,30 @@ footer p {
 /* VIEW FORM APLICATION */
 
 .form-aplication {
-  background-color: #f5f5f5;
+  background-color: whitesmoke;
+  position: relative;
 }
+
 .form-aplication .title-section{
   margin-bottom: 2rem;
   color: #007828;
 }
 
-.form-aplication label{
-  display: flex;
-  flex-direction: column;
-  padding: 1rem;;
-  font-size: 1.5rem;
-} 
-
-.form-aplication textarea {
-  resize: none;
-}
-
-.form-aplication input, .form-aplication textarea {
-  border: 1px solid #afafaf; 
-}
-
 .form-aplication form {
-  display: flex;
-  /* flex-direction: column; */
-  flex-wrap: wrap;
-  width: 65rem;
-  align-items: flex-end;
-  justify-content: space-between;
+  width: 69rem;
   box-shadow:  1px 1px 13px 0px #0000006b;
-  padding: 3rem;
-  background-color: #fff;
+  padding: 5rem;
+  background: white;
+  z-index: 99;
+}
+
+.bg-form {
+  width: 100%;
+  background-image: url(https://images.unsplash.com/photo-1527153818091-1a9638521e2a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=858&q=80);
+  opacity: 0.1;
+  height: 100%;
+  position: absolute;
+  background-size: cover;
 }
 
 .form-flex {
@@ -869,14 +869,53 @@ footer p {
   align-items: center;
 }
 
-.form-aplication label {
-  width: 50%;
+
+/* EFECT INPUTS */
+.input-effect {
+  position: relative;
+  font-size: 15px;
+  width: 100%;
+}
+/*= input focus effects css
+=========================== */
+:focus{outline: none;}
+/* necessary to give position: relative to parent. */
+input[type="text"], textarea {font: 15px/24px; color: #6b6b6b; width: 100%; box-sizing: border-box; letter-spacing: 1px;}
+
+.effect-18{border: 0; padding: 7px 0; border-bottom: 1.5px solid #dadada; color: #6b6b6b;  background-color: transparent; width: 100%; margin-bottom: 30px;}
+
+input.effect-18 ~ .focus-border{position: absolute; bottom: 30px; left: 0; width: 100%; height: 2px; z-index: 99;}
+input.effect-18 ~ .focus-border:before, 
+input.effect-18 ~ .focus-border:after{content: ""; position: absolute; bottom: -1px; left: 0; width: 0; height: 100%; background-color:  #007828; transition: 0.4s;}
+input.effect-18 ~ .focus-border:after{left: auto; right: 0;}
+input.effect-18 ~ .focus-border-textarea{position: absolute; bottom: 4px; left: 0; width: 100%; height: 2px; z-index: 99;}
+
+textarea.effect-18 ~ .focus-border{position: absolute; bottom: 38px; left: 0; width: 100%; height: 2px; z-index: 99;}
+textarea.effect-18 ~ .focus-border:before, 
+textarea.effect-18 ~ .focus-border:after{content: ""; position: absolute; bottom: -3px; left: 0; width: 0; height: 100%; background-color:  #007828; transition: 0.4s;}
+textarea.effect-18 ~ .focus-border:after{left: auto; right: 0; height: 2px;}
+textarea.effect-18 ~ .focus-border-textarea{position: absolute; bottom: 4px; left: 0; width: 100%; height: 2px; z-index: 99;}
+
+.effect-18:focus ~ .focus-border:before, 
+.effect-18:focus ~ .focus-border:after,
+.has-content.effect-18 ~ .focus-border:before,
+.has-content.effect-18 ~ .focus-border:after{width: 50%; transition: 0.4s;}
+.effect-18 ~ label{position: absolute; left: 0; width: 100%; top: 9px; color: #6b6b6b; transition: 0.3s; z-index: -1; letter-spacing: 0.5px;}
+.effect-18:focus ~ label, .has-content.effect-18 ~ label{top: -16px; font-size: 12px; color: #6b6b6b; transition: 0.3s;}
+
+@-moz-document url-prefix() {
+
+  textarea.effect-18 ~ .focus-border { bottom: 35px!important; }
+
 }
 
-label:nth-child(5) {
+textarea {
+  resize: none;
+  max-height: 60px;
   width: 100%;
-  height: 10rem;
+  overflow-y: hidden;
 }
+
 
 /* RESPONSIVE */
 
@@ -889,7 +928,7 @@ label:nth-child(5) {
   /* NAVBAR */
 
   .nav-link {
-    margin: 0.5rem 0;
+    margin: 1rem 0;
   }
   
   nav .nav-link-fixed {
@@ -951,6 +990,12 @@ label:nth-child(5) {
 
   .item-client {
     padding: 8.5rem;
+  }
+
+  /* FORM APLICATION */
+
+  .form-aplication form {
+    width: auto;
   }
 
 }
