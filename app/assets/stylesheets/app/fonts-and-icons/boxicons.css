@@ -1,0 +1,12 @@
+@font-face
+{
+    font-family: 'boxicons';
+    font-weight: normal;
+    font-style: normal;
+    src: url('/assets/app/fonts-and-icons/fonts/boxicons.eot');
+    src: url('/assets/app/fonts-and-icons/fonts/boxicons.eot') format('embedded-opentype'),
+    url('/assets/app/fonts-and-icons/fonts/boxicons.woff2') format('woff2'),
+    url('/assets/app/fonts-and-icons/fonts/boxicons.woff') format('woff'),
+    url('/assets/app/fonts-and-icons/fonts/boxicons.ttf') format('truetype'),
+    url('/assets/app/fonts-and-icons/fonts/boxicons.svg?#boxicons') format('svg');
+}

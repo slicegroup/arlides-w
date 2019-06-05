@@ -1,0 +1,11 @@
+.container-video
+  - @banners.each do |banner|   
+    %video.video-banner{:autoplay => "autoplay", :src => banner.video.url, poster: banner.image.url, muted: '', loop:"true" }
+    %source{src: banner.video.url, type: "video/mp4"}
+    .mask-banner
+      %h2.title-banner.padding-right-left= banner.title
+      %p.subtitle-banner.padding-right-left= banner.subtitle
+      %a.btn-green.one{:href => "/form"}
+        .insider
+        INVERTIR AHORA
+

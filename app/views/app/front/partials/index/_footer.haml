@@ -1,0 +1,100 @@
+%footer#footer.scroll-section
+  .padding-right-left.padding-top-bottom.mask-footer
+    .row
+      .col-lg-6
+        .box-logo
+          %img{:alt => "", :src => "/assets/app/logo-white.png"}
+          %p
+            Fomentamos y desarrollamos empresas valiosas, convirtiendo
+            los retos en oportunidades generando valor y haciendo del mundo un mejor lugar.
+        .box-info-contact
+          .contact
+            %p
+              %i.fa.fa-map-marker{"aria-hidden" => "true"}
+              La Central Mayorista Calle 85 # 48 – 01
+            %p
+              %i.fa.fa-phone{"aria-hidden" => "true"}
+              +57 323 3797467
+          .follow
+            %div
+              %a{:href => "https://www.facebook.com/arlidesgroup/", :target => "_blank"}
+                %i.fa.fa-facebook{"aria-hidden" => "true"}
+              %a{:href => "https://www.instagram.com/arlidesgroup/?hl=es-la", :target => "_blank"}
+                %i.fa.fa-instagram{"aria-hidden" => "true"}
+              %a.company{:href => ""} Política de Privacidad
+              %a.company{:href => ""} Términos y Condiciones
+      .col-lg-6
+        %h2.title-section CONTÁCTANOS
+        = render 'app/layouts/messages'
+        .form-footer
+          = simple_form_for @message, url: app_new_message_path do |f|
+            %input#message_name1{:placeholder => "NOMBRE Y APELLIDO", :type => "text", name: 'message[name]', autocomplete: 'off', required: 'required'}
+            %input#message_email1{:placeholder => "CORREO ELECTRÓNICO", :type => "email", name: 'message[to_emails]', autocomplete: 'off', required: 'required'}
+            %textarea{:cols => "30", :id => "", name: 'message[content]', :placeholder => "MENSAJE", :rows => "10" , autocomplete: 'off', required: 'required'}
+            .box-submit
+              %center
+                = recaptcha_tags
+              %button.btn-green.one{type: "submit"}
+                .insider
+                ENVIAR
+  .copyright
+    .container
+      %p.mr-2  
+        Copyright © Arlides Group 2019 | Powered by
+      %a{:href => "https://slicegroup.co/", target: '_blank' }
+        %img{:alt => "", :src => "/assets/app/logo-slice.jpg", :width => "10rem"}
+
+- if flash[:notice].eql?('Mensaje enviado')
+  %p.name.fade= flash[:name]
+  :javascript
+    var name = $('.name').text().split(' ')[0]
+    swal({
+      type: 'success',
+      title: `¡felicidades, ${name}!`,
+      text: 'Tu mensaje ha sido enviado.',
+      footer: '<a href>Why do I have this issue?</a>'
+    })
+- elsif flash[:notice].eql?('Mensaje no enviado')
+  %p.name.fade= flash[:name]
+  :javascript
+    var name = $('.name').text().split(' ')[0]
+    swal({
+      title: `lo sentimos, ${name}`,
+      text: 'Tu mensaje no ha sido enviado, activa el recaptcha.',
+      footer: '<a href>Why do I have this issue?</a>'
+    })
+:javascript
+  function recaptcha_callback(){
+    // alert('callback working');
+    if (($('#message_name1').val() != '')
+      && ($('#message_content').val() != '')
+      && ($('#message_email1').val() != '')) {
+      $('.send').prop('disabled', false);
+    } else {
+      swal('Completa todos los campos');
+      grecaptcha.reset();
+    }
+  }
+  $('.keppler-custom-field input, textarea').removeClass('form-control');
+  
+  $("#new_message").validate({
+    event: "blur",
+    errorClass: "error-class",
+    validClass: "valid-class",
+    rules: {																																																																																																																																																								
+      'message[name]': { required: true},
+      'message[to_emails]': { required: true, email: true },
+      'message[content]': { required: true},
+      'message[type_message]': { required: true }
+    },
+    messages: {
+      'message[name]': 'Por favor indica tu nombre',
+      'message[to_emails]': 'Introduce un email válido',
+      'message[content]': 'Introduce un mensaje breve',
+      'message[type_message]': 'Type message blank'
+    },
+    debug: true,errorElement: "label",
+    submitHandler: function(form){
+    form.submit();
+    }
+  });

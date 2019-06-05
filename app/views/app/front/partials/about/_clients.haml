@@ -1,0 +1,25 @@
+%h2.title-section.padding-right-left NUESTRAS MARCAS
+.box-logos.padding-right-left
+  - @clients.each do |client|
+    .content-logo
+      %img{:alt => "", :src => "#{client.image}"}
+      %a{:href => "#", :target => "_blank", "data-target" => "#exampleModal", "data-toggle" => "modal"} Ver Más
+    / Modal
+    #exampleModal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "exampleModalLabel", :role => "dialog", :tabindex => "-1"}
+      .modal-dialog{:role => "document"}
+        .modal-content
+          .modal-header
+            %h5#exampleModalLabel.modal-title Inveroptima
+            %button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
+              %span{"aria-hidden" => "true"} ×
+          .modal-body
+            .description-mark
+              %p 
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt, laudantium ratione voluptatem quibusdam inventore unde sit neque debitis, aspernatur deleniti veniam, distinctio tempore facilis. Corporis quod vero reprehenderit perferendis expedita.
+          .red-social
+            %a{ :href => "#{client.facebook}", :target => "_blank"}
+              %i.fa.fa-facebook{"aria-hidden" => "true",}
+            %a{:href => "#{client.instagram}", :target => "_blank" }
+              %i.fa.fa-instagram{"aria-hidden" => "true",}
+            %a{:href => "#{client.instagram}", :target => "_blank" }
+              %i.fa.fa-globe{"aria-hidden" => "true",}

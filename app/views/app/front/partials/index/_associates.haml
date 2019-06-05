@@ -1,0 +1,25 @@
+%h2.title-section NUESTRAS MARCAS
+.box-logos.padding-right-left
+  - @clients.each do |client|
+    .content-logo
+      %img{:alt => "", :src => "#{client.image}"}
+      %a{"data-target" => "#modal-#{client.id}", "data-toggle" => "modal", :href => "", :target => "_blank"} Ver Más
+    / Modal
+    - @clients.each do |client|
+      .modal.fade{"aria-hidden" => "true", "aria-labelledby" => "exampleModalLabel", :role => "dialog", :tabindex => "-1", id: "modal-#{client.id}"}
+        .modal-dialog{:role => "document"}
+          .modal-content
+            .modal-header
+              %h5#exampleModalLabel.modal-title= client.title
+              %button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
+                %span{"aria-hidden" => "true"} ×
+            .modal-body
+              .description-mark
+                %p= raw client.service
+            .red-social
+              %a{ :href => "#{client.facebook}", :target => "_blank"}
+                %i.fa.fa-facebook{"aria-hidden" => "true",}
+              %a{:href => "#{client.instagram}", :target => "_blank" }
+                %i.fa.fa-instagram{"aria-hidden" => "true",}
+              %a{:href => "#{client.instagram}", :target => "_blank" }
+                %i.fa.fa-globe{"aria-hidden" => "true",}

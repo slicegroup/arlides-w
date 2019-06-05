@@ -1,0 +1,258 @@
+!!!
+%html{:lang => "en"}
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %meta{:charset => "UTF-8"}/
+    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
+    %meta{:content => "ie=edge", "http-equiv" => "X-UA-Compatible"}/
+    %title Document
+    %link{:crossorigin => "anonymous", :href => "https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css", :integrity => "sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO", :rel => "stylesheet"}
+    %link{:href => "https://fonts.googleapis.com/css?family=Lato:400,700,900", :rel => "stylesheet"}
+    %link{:href => "https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css", :rel => "stylesheet", :type => "text/css"}
+    %link{:href => "https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css", :rel => "stylesheet", :type => "text/css"}
+    %link{:href => "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css", :rel => "stylesheet"}
+    %link{:href => "assets/css/main.css", :rel => "stylesheet"}
+  %body
+    = render 'app/front/partials/preload'
+    %header.nav-fixed{:style => "top: 0; z-index: 999"}
+      %nav.navbar.navbar-expand-md.padding-right-left.navbar-light
+        %a.navbar-brand{:href => root_path}
+          / <img id="logo-white" src="/assets/app/logo-white.png" alt="" style="width:100px ">
+          %img#logo-green{:alt => "", :src => "/assets/app/logo.png", :style => "width:100px "}/
+        %button#button-white.navbar-toggler{"aria-controls" => "navbarNav", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarNav", "data-toggle" => "collapse", :type => "button"}
+          %span#icon-white.navbar-toggler-icon
+        %button#button-green.navbar-toggler{"aria-controls" => "navbarNav", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarNav", "data-toggle" => "collapse", :type => "button"}
+          %span#icon-green.navbar-toggler-icon
+        #navbarNav.collapse.navbar-collapse
+          %ul.navbar-nav
+            %li.nav-item.active
+              %a.nav-link.navbar-link.nav-link-fixed{:href => root_path}
+                INICIO
+                %span.sr-only (current)
+            %li.nav-item
+              %a.nav-link.navbar-link.nav-link-fixed{:href => "/about"} QUIÉNES SOMOS
+            %li.nav-item
+              %a.nav-link.navbar-link.nav-link-fixed{:href => "/#associates"} NUESTRAS MARCAS
+            %li.nav-item
+              %a.nav-link.navbar-link.nav-link-fixed{:href => "#footer"} CONTÁCTANOS
+    %section.about-form.padding-right-left.padding-top-bottom.scroll-section
+      %h2.title-section#padding-top INVIERTE CON NOSOTROS
+      .row
+        .col-lg-6
+          %nav.nav-about-view
+            #nav-tab.nav.nav-tabs{:role => "tablist"}
+              %a#nav-home-tab.nav-item.nav-link.tab-about.active{"aria-controls" => "nav-form", "aria-selected" => "true", "data-toggle" => "tab", :href => "#nav-form", :role => "tab"} Proponer idea de negocio
+              %a#nav-profile-tab.nav-item.nav-link.tab-about{"aria-controls" => "nav-profile", "aria-selected" => "false", "data-toggle" => "tab", :href => "#nav-profile", :role => "tab"} Criterios de Inversión
+              %a#nav-home-tab.nav-item.nav-link.tab-about{"aria-controls" => "nav-home", "aria-selected" => "true", "data-toggle" => "tab", :href => "#nav-home", :role => "tab"} Plan de negocios
+          #nav-tabContent.tab-content
+            #nav-form.tab-pane.fade.show.active.description-about{"aria-labelledby" => "nav-home-tab", :role => "tabpanel"}
+              %p
+                Si usted es un inversionista o hace parte de un equipo de administración experimentado que busca opciones para el crecimiento de capital, este podría ser el comienzo de una Excelente Relación.El equipo de Arlides Group está en constante búsqueda de Oportunidades de Inversión y Desarrollo de Proyectos en los siguientes sectores:
+              %ul.list-about
+                %li
+                  %i.fa.fa-check-square{"aria-hidden" => "true"}
+                  Inmobiliario
+                %li
+                  %i.fa.fa-check-square{"aria-hidden" => "true"}
+                  Marketing
+                %li
+                  %i.fa.fa-check-square{"aria-hidden" => "true"}
+                  Turístico
+                %li
+                  %i.fa.fa-check-square{"aria-hidden" => "true"}
+                  Entretenimiento
+            #nav-home.tab-pane.fade.show.description-about{"aria-labelledby" => "nav-home-tab", :role => "tabpanel"}
+              %p
+                Su plan de negocios debe abordar los siguientes aspectos de la manera más concisa posible:
+              %ul.list-about
+                %li
+                  %i.fa.fa-check-square{"aria-hidden" => "true"}
+                  Propósito comercial y estrategia.
+                %li
+                  %i.fa.fa-check-square{"aria-hidden" => "true"}
+                  Cliente objetivo y mercado (Segmento).
+                %li
+                  %i.fa.fa-check-square{"aria-hidden" => "true"}
+                  Propuesta de valor de producto o servicio y unidad económica.
+                %li
+                  %i.fa.fa-check-square{"aria-hidden" => "true"}
+                  Competidores y ventajas competitivas.
+                %li
+                  %i.fa.fa-check-square{"aria-hidden" => "true"}
+                  Proyección clientes existentes, contratos y socios clave.
+                %li
+                  %i.fa.fa-check-square{"aria-hidden" => "true"}
+                  Visión general del equipo de gestión
+                %li
+                  %i.fa.fa-check-square{"aria-hidden" => "true"}
+                  Plan financiero resumen y canal de ventas.
+                %li
+                  %i.fa.fa-check-square{"aria-hidden" => "true"}
+                  Requisitos de financiación y usos.
+              %p 
+                Para obtener ayuda sobre los planes de negocios, puede llenar el siguiente Formulario:
+            #nav-profile.tab-pane.fade.description-about{"aria-labelledby" => "nav-profile-tab", :role => "tabpanel"}
+              %p
+                Dichos proyectos como mínimo deben cumplir con los siguientes criterios:
+              %ul.list-about
+                %li
+                  %i.fa.fa-check-square{"aria-hidden" => "true"}
+                  Permanecer solo (no depender de otro negocio de Arlides Group)
+                %li
+                  %i.fa.fa-check-square{"aria-hidden" => "true"}
+                  Orientado al consumidor.
+                %li
+                  %i.fa.fa-check-square{"aria-hidden" => "true"}
+                  Proporciona una propuesta de valor diferenciada.
+                %li
+                  %i.fa.fa-check-square{"aria-hidden" => "true"}
+                  Proyección de Ingresos y relaciones comerciales verificables.
+                %li
+                  %i.fa.fa-check-square{"aria-hidden" => "true"}
+                  Potencial para el liderazgo del mercado.
+                %li
+                  %i.fa.fa-check-square{"aria-hidden" => "true"}
+                  Valorar, respetar y promover la Cultura empresarial y ADN de Arlides Group
+                %li
+                  %i.fa.fa-check-square{"aria-hidden" => "true"}
+                  Oportunidad de promover el negocio por Medio de Co Branding con Arlides Group. (En todas las direcciones, desde el nuevo negocio hacia Arlides Group y viceversa)
+                %p 
+                  Si su idea de negocio se ajusta a los criterios y estrategia de Arlides Group, deberá presentar un plan de negocios.
+        .col-lg-6
+          .bg-about{:style => "background-image: url('https://images.unsplash.com/photo-1501228349589-c88664efb8b1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80');"}
+
+    %section.form-aplication.scroll-section
+      .bg-form
+      .padding-top-bottom.form-flex
+        %h2.title-section.padding-right-left FORMULARIO DE APLICACIÓN
+        %p.subtitle-sector.padding-right-left
+          Para obtener ayuda sobre los planes de negocios, puede llenar el
+          siguiente
+          Formulario
+          = render 'app/layouts/messages'
+          .form-app
+            = simple_form_for [:contact_us, @message], url: app_new_message_product_path, html: { multipart: true, id: :new_message_product} do |f|
+              .row
+                .col-lg-6.col-sm-6
+                  .input-effect
+                    %input.effect-18#message_name2{:autocomplete => "off", :name => "message[name]", :type => "text", placeholder: 'Nombre y Apellido'}
+                    %span.focus-border
+                .col-lg-6.col-sm-6
+                  .input-effect
+                    %input.effect-18#message_email2{:autocomplete => "off", :name => "message[to_emails]", :type => "email", placeholder: 'Correo Electrónico' }
+                    %span.focus-border
+                .col-lg-6.col-sm-6
+                  .input-effect
+                    %input.effect-18#message_phone1{:autocomplete => "off", :name => "message[phone]", :type => "number", placeholder: 'Número Telefónico'}
+                    %span.focus-border
+                .col-lg-6.col-sm-6
+                  .input-effect
+                    %input.effect-18#message_city1{:autocomplete => "off", :name => "message[city]", :type => "text", placeholder: 'Ciudad' }
+                    %span.focus-border
+                .col-lg-12
+                  .input-effect
+                    %textarea.effect-18#message_biography1{:id => "", :name => "message[biography]", placeholder: 'Biografía'}
+                    %span.focus-border
+                .col-lg-6.col-sm-6
+                  .input-effect
+                    %input.effect-18#message_company1{:autocomplete => "off", :type => "text", :name => "message[company]", placeholder: 'Nombre de la Empresa' }
+                    %span.focus-border
+                .col-lg-6.col-sm-6
+                  .input-effect
+                    %input.effect-18#message_problem1{:autocomplete => "off", :type => "text", :name => "message[problem]", placeholder: 'Que problema resuelve la Empresa'}
+                    %span.focus-border
+                .col-lg-12
+                  .input-effect
+                    %textarea.effect-18#message_income1{:id => "", :name => "message[income]", placeholder: 'Control de ingreso y relaciones comerciales'}
+                    %span.focus-border
+                .col-lg-6.col-sm-6.service-company
+                  .input-effect
+                    %input.effect-18#message_product1{:autocomplete => "off", :name => "message[product]", :type => "text", placeholder: 'Producto o servicio'}
+                    %span.focus-border
+                .col-lg-6.col-sm-6
+                  %label.pdf{:for => "file-upload"}
+                    %i.fas.fa-cloud-upload-alt
+                    Adjuntar plan de negocio (PDF)
+                  %input#file-upload{:onchange => "cambiar()", :style => "display: none;", :name => "message[archive]", :accept => "application/pdf", :type => "file"}
+                  #info 
+                .col-lg-6.col-sm-6.box-submit
+                  = recaptcha_tags
+                .col-lg-6.col-sm-6.box-submit{:style=>"justify-content: flex-end"}
+                  %button.btn-green.one
+                    .insider
+                    ENVIAR
+                .col-lg-6 
+    %section.scroll-section.join 
+      .padding-top-bottom.padding-right-left
+        %h2.title-section 
+          TRABAJA CON NOSOTROS
+        %p
+          Comparte tus datos, de ésta manera estaremos en contacto para que estés alerta de las Ofertas Laborales, como adelanto te contamos que buscamos personas 
+          %span con alto 
+          Nivel de servicio, que cuenten con excelente disposición a querer hacer y dar más. Buscamoslíderes orientados a alcanzar metas, apasionados, autónomos e ingeniosos
+    = render 'app/front/partials/index/footer'      
+    %a{:href => ""}
+      %i.fa.float-ws.fa-whatsapp{"aria-hidden" => "true"}
+    %script{:crossorigin => "anonymous", :integrity => "sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo", :src => "https://code.jquery.com/jquery-3.3.1.slim.min.js"}
+    %script{:crossorigin => "anonymous", :integrity => "sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49", :src => "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"}
+    %script{:crossorigin => "anonymous", :integrity => "sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy", :src => "https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"}
+    %script{:src => "https://code.jquery.com/jquery-1.11.0.min.js", :type => "text/javascript"}
+    %script{:src => "https://code.jquery.com/jquery-migrate-1.2.1.min.js", :type => "text/javascript"}
+    %script{:src => "https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js", :type => "text/javascript"}
+    %script{:src => "https://www.google.com/recaptcha/api.js"}
+    %script{:src => "/assets/js/main.js", :type => "text/javascript"}
+    %script{:src => "https://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"}
+:javascript
+  function recaptcha_callback(){
+    // alert('callback working');
+    if (($('#message_name2').val() != '')
+      && ($('#message_income1').val() != '')
+      && ($('#message_product1').val() != '')
+      && ($('#message_company1').val() != '')
+      && ($('#message_biography1').val() != '')
+      && ($('#message_city1').val() != '')
+      && ($('#message_phone1').val() != '')
+      && ($('#message_email2').val() != '')) {
+      $('.send').prop('disabled', false);
+    } else {
+      swal('Completa todos los campos');
+      grecaptcha.reset();
+    }
+  }
+  $('.keppler-custom-field input, textarea').removeClass('form-control');
+
+  $("#new_message_product").validate({
+  event: "blur",
+  errorClass: "error-class",
+  validClass: "valid-class",
+  rules: {																																																																																																																																																								
+    'message[name]': { required: true},
+    'message[problem]': { required: true},
+    'message[product]': { required: true},
+    'message[company]': { required: true},
+    'message[biography]': { required: true},
+    'message[city]': { required: true},
+    'message[income]': { required: true},
+    'message[phone]': { required: true},
+    'message[to_emails]': { required: true, email: true },
+    'message[type_message]': { required: true }
+  },
+  messages: {
+    'message[name]': 'Indica tu nombre',
+    'message[company]': 'Indica el nombre de tu empresa',
+    'message[income]': 'Indica tus ingresos',
+    'message[phone]': 'Indica tu numero telefonico',
+    'message[biography]': 'Indica tu biografia',
+    'message[product]': 'Indica producto o servico',
+    'message[problem]': 'Indica el problema a resolver',
+    'message[city]': 'Indica tu ciudad',
+    'message[to_emails]': 'Introduce un email válido',
+    'message[type_message]': 'Type message blank'
+  },
+  debug: true,errorElement: "label",
+  submitHandler: function(form){
+  form.submit();
+  }
+  });
+  
+
