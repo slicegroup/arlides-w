@@ -5,20 +5,20 @@ module App
 
     def send_message
     end
-    
+
     def new_message
-      @message = KepplerContactUs::Message.new( 
+      @message = KepplerContactUs::Message.new(
         message_params
       )
       if verify_recaptcha(model: @message) && @message.save
         UserMailer.send_new_message(@message).deliver_now
-        UserMailer.send_new_message2(@message).deliver_now 
+        UserMailer.send_new_message2(@message).deliver_now
         flash[:notice] = 'Mensaje enviado'
         flash[:name] = params[:message][:name]
-    
+
         redirect_to root_path
       else
-        redirect_to root_path      
+        redirect_to root_path
         flash[:notice] = 'Mensaje no enviado'
       end
 
@@ -27,7 +27,7 @@ module App
     def new_message_product
       @message = KepplerContactUs::Message.new(
         message_params
-        
+
       )
       @message.archive = params[:message][:archive]
       if verify_recaptcha(model: @message) && @message.save!
@@ -35,19 +35,19 @@ module App
         UserMailer.send_message_product2(@message).deliver_now
         flash[:notice] = 'Mensaje enviado'
         flash[:name] = params[:message][:name]
-        
+
         redirect_to root_path
       else
-        redirect_to root_path      
+        redirect_to root_path
         flash[:notice] = 'Mensaje no enviado'
       end
 
     end
-    
-    
+
+
     def index
       @banners = KepplerBanners::Banner.where(active: true)
-      @clients = KepplerCustomers::Client.all
+      @clients = KepplerCustomers::Client.order(position: :asc)
     end
 
     def about
@@ -85,5 +85,5 @@ module App
       )
     end
   end
-  
+
 end
