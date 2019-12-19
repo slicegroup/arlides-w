@@ -85,7 +85,7 @@ GEM
     pg (1.0.0)
     pundit (2.0.0)
       activesupport (>= 3.0.0)
-    rack (2.0.5)
+    rack (2.0.8)
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
     rails (5.2.0)
@@ -138,10 +138,8 @@ PLATFORMS
 
 DEPENDENCIES
   bootstrap-wysihtml5-rails
-  jquery-validation-rails
   keppler_contact_us!
   pg
-  recaptcha
 
 BUNDLED WITH
    1.16.4
