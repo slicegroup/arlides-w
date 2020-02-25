@@ -77,11 +77,11 @@ GEM
     method_source (0.9.0)
     mimemagic (0.3.2)
     mini_mime (1.0.1)
-    mini_portile2 (2.3.0)
+    mini_portile2 (2.4.0)
     minitest (5.11.3)
     nio4r (2.3.1)
-    nokogiri (1.8.4)
-      mini_portile2 (~> 2.3.0)
+    nokogiri (1.10.8)
+      mini_portile2 (~> 2.4.0)
     pg (1.0.0)
     pundit (2.0.0)
       activesupport (>= 3.0.0)
@@ -138,10 +138,8 @@ PLATFORMS
 
 DEPENDENCIES
   bootstrap-wysihtml5-rails
-  jquery-validation-rails
   keppler_contact_us!
   pg
-  recaptcha
 
 BUNDLED WITH
    1.16.4
