@@ -66,7 +66,7 @@ GEM
     i18n (1.0.1)
       concurrent-ruby (~> 1.0)
     jquery-validation-rails (1.16.0)
-    json (2.1.0)
+    json (2.3.1)
     loofah (2.2.2)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -138,10 +138,8 @@ PLATFORMS
 
 DEPENDENCIES
   bootstrap-wysihtml5-rails
-  jquery-validation-rails
   keppler_contact_us!
   pg
-  recaptcha
 
 BUNDLED WITH
    1.16.4
