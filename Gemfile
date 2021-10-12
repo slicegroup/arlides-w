@@ -18,7 +18,7 @@ gem 'vuejs-rails', '2.5.13' # VueJS library
 gem "recaptcha"
 
 # Server
-gem 'puma', '~> 3.11', '>= 3.11.3'
+gem 'puma', '~> 5.5'
 
 # Documentation
 gem 'sdoc', '1.0.0'
